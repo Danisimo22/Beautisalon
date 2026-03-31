@@ -1,0 +1,118 @@
+/* --- СЕКЦІЯ: КОМАНДА --- */
+
+.team {
+    padding: 20px 0;
+}
+
+
+
+.underline {
+    width: 125px;
+    height: 1px;
+    background-color: #ccc;
+    margin-bottom: 40px;
+}
+
+/* Контейнер самого слайдера */
+.team-slider {
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+/* Картка майстра всередині слайдера */
+.master-card {
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    height: 350px;
+}
+
+.master-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Інформаційна плашка на фото майстра */
+.master-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.2) 60%, transparent 100%);
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.master-info h3 {
+    font-size: 16px;
+    margin: 0 0 5px 0;
+    font-weight: 500;
+}
+
+.master-info p {
+    font-size: 13px;
+    opacity: 0.9;
+    margin: 0;
+}
+
+/* Елементи керування слайдером (цятки та стрілки в одному рядку) */
+.team-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+}
+
+/* Цятки (Пагінація) */
+.team-pagination {
+    position: static !important;
+    width: auto !important;
+    display: flex;
+    gap: 8px;
+}
+
+.team-pagination .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    background: #000;
+    opacity: 0.2;
+}
+
+.team-pagination .swiper-pagination-bullet-active {
+    opacity: 1;
+}
+
+/* Контейнер для стрілок */
+.team-navigation {
+    display: flex;
+    gap: 15px;
+}
+
+/* Стрілки навігації */
+.team-prev, .team-next {
+    display: block !important; /* Гарантуємо видимість */
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    opacity: 0.3;
+    transition: 0.3s;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: static !important; /* Вириваємо з країв екрана і ставимо в блок */
+}
+
+.team-prev:hover, .team-next:hover {
+    opacity: 1;
+}
+
+/* SVG Іконки для стрілок */
+.team-prev {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="black" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75" /></svg>');
+}
+
+.team-next {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="black" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" /></svg>');
+}

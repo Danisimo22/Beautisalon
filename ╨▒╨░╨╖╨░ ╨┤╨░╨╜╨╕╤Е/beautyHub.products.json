@@ -1,0 +1,60 @@
+[{
+  "_id": {
+    "$oid": "69c7e5f21ef9b6ad08cc1a10"
+  },
+  "name": "NOUNOU банановий кондиціонер",
+  "category": "Кондиціонер",
+  "price": 29,
+  "stock": 60,
+  "image": "shop-conditioner-1.webp",
+  "createdAt": {
+    "$date": "2026-03-28T14:30:10.132Z"
+  },
+  "__v": 0,
+  "costPrice": 15
+},
+{
+  "_id": {
+    "$oid": "69c7e65c1ef9b6ad08cc1a13"
+  },
+  "name": "NOUNOU кондиціонер з екстрактом зерна",
+  "category": "Кондиціонер",
+  "price": 29,
+  "stock": 10,
+  "image": "shop-conditioner-2.webp",
+  "createdAt": {
+    "$date": "2026-03-28T14:31:56.421Z"
+  },
+  "__v": 0,
+  "costPrice": 15
+},
+{
+  "_id": {
+    "$oid": "69c7e99ff2723b5587104298"
+  },
+  "name": "NOUNOU кондиціонер з лавандою",
+  "category": "Кондиціонер",
+  "price": 29,
+  "stock": 0,
+  "image": "shop-conditioner-3.webp",
+  "createdAt": {
+    "$date": "2026-03-28T14:45:51.999Z"
+  },
+  "__v": 0,
+  "costPrice": 15
+},
+{
+  "_id": {
+    "$oid": "69c7e9e0f2723b558710429f"
+  },
+  "name": "NOUNOU кондиціонер з екстрактом Манго",
+  "category": "Кондиціонер",
+  "price": 30,
+  "stock": 0,
+  "image": "shop-conditioner-4.webp",
+  "createdAt": {
+    "$date": "2026-03-28T14:46:56.788Z"
+  },
+  "__v": 0,
+  "costPrice": 15
+}]

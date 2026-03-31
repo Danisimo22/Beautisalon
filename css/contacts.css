@@ -1,0 +1,13 @@
+/* --- СЕКЦІЯ КОНТАКТИ --- */
+.contacts-section {
+    padding: 20px 0;
+     background-color: #f9f9f9; /* Той самий фон, що й всюди */
+}
+
+.map-container {
+    border-radius: 20px;
+    overflow: hidden;
+    margin-top: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+

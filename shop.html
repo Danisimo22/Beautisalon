@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Магазин професійної косметики для волосся MLVCH. Шампуні, кондиціонери, олії та маски.">
+    <meta name="keywords" content="hair care, shampoo, conditioner, hair mask, oil, MLVCH shop, косметика для волосся">
+
+    <title>MLVCH магазин</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/shop.css">
+    <link rel="stylesheet" href="css/booking.css">
+
+    <link rel="icon" href="img/favicon.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body class="shop-page">
+    <div class="main-wrapper">
+        <header id="main-header">
+            <div class="main-wrapper">
+                <nav>
+                    <a href="index.html" class="MLVCH-header">MLVCH</a>
+                    <div class="header-links">
+                        <a href="index.html#about-us-main-page">Про нас</a>
+                        <a href="index.html#team-main-page">Команда</a>
+                        <a href="index.html#price-main-page">Ціни</a>
+                        <a href="index.html#portfolio-main-page">Портфоліо</a>
+                        <a href="index.html#contact-main-page">Зв'язок</a>
+                        <a href="shop.html" class="active">Магазин</a>
+                    </div>
+
+                    <div class="header-icons">
+                        <a href="account.html">
+                            <img src="img/user.png" class="account" alt="Профіль" width="35" height="35">
+                        </a>
+                        <a href="cart.html">
+                            <img src="img/sell.png" class="shopping-bag" alt="Кошик" width="35" height="35">
+                        </a>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <div class="shop-main" id="shop">
+                <div class="pelena">
+                    <img src="img/shop-main.jpg" alt="MLVCH Shop Banner">
+                </div>
+                <h3>MLVCH SHOP</h3>
+            </div>
+
+            <div class="shop">
+                <div class="sort-filter" style="text-align: center; margin-bottom: 30px;">
+                    <div class="sort-options" style="display: inline-block; margin-right: 20px;">
+                        <label for="sort-select">Сортувати за:</label>
+                        <select id="sort-select" onchange="sortProducts()">
+                            <option value="default">За замовчуванням</option>
+                            <option value="price-asc">Ціна: від низької до високої</option>
+                            <option value="price-desc">Ціна: від високої до низької</option>
+                        </select>
+                    </div>
+                    <div class="filter-options">
+    <label for="filter-select">Фільтрувати за типом:</label>
+    <select id="filter-select" onchange="filterProducts()">
+        <option value="all">Всі товари</option>
+        <option value="Шампунь">Шампунь</option>
+        <option value="Кондиціонер">Кондиціонер</option>
+        <option value="Олія">Олія</option>
+        <option value="Маска">Маска</option>
+    </select>
+</div>
+                </div>
+
+                <div class="shop-products" id="products-container">
+                    <p style="text-align: center; grid-column: 1/-1; padding: 50px;">Завантаження асортименту...</p>
+                </div>
+            </div>
+        </main>
+
+        <footer class="main-footer">
+            <div class="team-container">
+                <div class="footer-top">
+                    <div class="footer-brand">
+                        <h3>MALEVICH</h3>
+                        <p>Салони краси, де піклуються про якість та емоції.</p>
+                    </div>
+                    <div class="footer-cta">
+                        <p>Створіть свій новий образ вже сьогодні!</p>
+                        <button class="btn-book" onclick="openModal()">Онлайн запис</button>
+                    </div>
+                </div>
+                <div class="footer-divider"></div>
+                <div class="footer-bottom">
+                    <div class="footer-contact-info">
+                        <div class="info-item"><strong>Телефон:</strong><p>+38 073 500 07 22</p></div>
+                        <div class="info-item"><strong>Email:</strong><p>malevich@gmail.com</p></div>
+                        <div class="info-item"><strong>Адреса:</strong><p>Львів, вул. Степана Бандери, 15</p></div>
+                        <div class="info-item"><strong>Графік:</strong><p>ПН-НД 9:00-20:00</p></div>
+                    </div>
+                    <div class="footer-socials">
+                <a href="https://t.me/viktoriia_dikhtiarenko" target="_blank">
+                    <img src="img/footer-telegram.png" alt="Telegram">
+                </a>
+                <a href="https://www.instagram.com/ya.karolinaa?igsh=YmlzcTh0Yzdpam4x&utm_source=qr" target="_blank">
+                    <img src="img/footer-instagram.png" alt="Instagram">
+                </a>
+            </div>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2026 MALEVICH Beauty Hub. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+
+
+               
+<div id="booking-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <h3>Записатися на візит</h3>
+        <p>Залиште свої дані, і ми підберемо для вас ідеальний час.</p>
+        
+        <form id="booking-form">
+            <div class="input-group">
+                <input type="text" id="user-name" placeholder="Ім'я" required>
+            </div>
+            <div class="input-group">
+                <input type="text" id="user-surname" placeholder="Прізвище" required>
+            </div>
+            <div class="input-group">
+                <input type="tel" id="user-phone" placeholder="+380..." required>
+            </div>
+
+            <div class="input-group">
+                <select id="select-category" required onchange="updateSubServices()">
+                    <option value="" disabled selected>Оберіть категорію</option>
+                    <option value="Манікюр">Манікюр</option>
+                    <option value="Педикюр">Педикюр</option>
+                    <option value="Брови та вії">Брови та вії</option>
+                    <option value="Волосся">Волосся</option>
+                </select>
+            </div>
+
+            <div class="input-group hidden-element" id="sub-service-wrapper">
+                <select id="select-service" required onchange="displayPrice()">
+                    <option value="" disabled selected>Яка саме процедура?</option>
+                </select>
+            </div>
+
+            <div id="price-display" class="price-info-box hidden-element">
+                <span class="price-label">Вартість: </span>
+                <span id="service-price">0</span>
+                <span> €</span>
+            </div>
+
+            <div class="input-group">
+                <select id="select-master" required>
+                    <option value="" disabled selected>Оберіть майстра</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <input type="date" id="booking-date" required>
+            </div>
+
+            <div class="input-group">
+                <select id="booking-time" required>
+                    <option value="" disabled selected>Оберіть час</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn-submit">Підтвердити запис</button>
+        </form>
+    </div>
+</div>
+
+
+  
+
+
+
+<script src="js/script.js"></script>
+<script src="js/booking.js"></script>
+<script src="js/shop.js"></script>
+     <script src="js/price.js"></script>
+  </div>
+</body>
+
+</html>

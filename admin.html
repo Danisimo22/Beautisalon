@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Панель Адміністратора | MLVCH</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/admin_orders.css">
+
+</head>
+<body class="admin-page">
+
+    <div class="admin-sidebar">
+        <h2>MLVCH ADMIN</h2>
+        <nav>
+            <button onclick="showSection('dashboard')" class="nav-btn active">Дашборд</button>
+            <button onclick="showSection('bookings')" class="nav-btn">Записи на тиждень</button>
+            <button class="nav-btn" onclick="showSection('orders-manage')">Замовлення</button>
+            <button onclick="showSection('staff')" class="nav-btn">Співробітники</button>
+            <button onclick="showSection('shop-manage')" class="nav-btn">Магазин</button>
+            <button onclick="logout()" class="btn-logout-admin">Вийти</button>
+        </nav>
+    </div>
+
+    <main class="admin-main">
+
+       <section id="dashboard" class="admin-section">
+            <h1>Вітаємо, Адміністратор!</h1>
+            
+            <div class="card chart-card" style="margin-bottom: 30px; height: 300px;">
+                <h3>Графік прибутку (останні 7 днів)</h3>
+                <canvas id="revenueChart"></canvas>
+            </div>
+            
+            <div class="stats-cards" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 30px;">
+                <div class="card">
+                    <h3 style="font-size: 13px; color: #7f8c8d;">ЗАПИСИ СЬОГОДНІ</h3>
+                    <p id="today-bookings-count">0</p>
+                </div>
+                <div class="card" style="border-left: 5px solid #f1c40f;">
+                    <h3 style="font-size: 13px; color: #7f8c8d;">НОВІ ЗАМОВЛЕННЯ</h3>
+                    <p id="new-orders-count">0</p>
+                </div>
+                <div class="card" style="border-left: 5px solid #e74c3c;">
+                    <h3 style="font-size: 13px; color: #7f8c8d;">ЗАПИСИ В ОБРОБЦІ</h3>
+                    <p id="pending-bookings-count">0</p>
+                </div>
+                
+                <div class="card" style="border-left: 5px solid #9b59b6;">
+                    <h3 style="font-size: 13px; color: #7f8c8d;">ЗАГАЛЬНИЙ ОБОРОТ БІЗНЕСУ</h3>
+                    <p id="total-combined-revenue">0€</p>
+                </div>
+                <div class="card" style="border-left: 5px solid #D1957B;">
+                    <h3 style="font-size: 13px; color: #7f8c8d;">ОБОРОТ САЛОНУ (ПОСЛУГИ)</h3>
+                    <p id="salon-revenue-total">0€</p>
+                </div>
+                <div class="card" style="border-left: 5px solid #27ae60;">
+                    <h3 style="font-size: 13px; color: #7f8c8d;">ОБОРОТ МАГАЗИНУ (ТОВАРИ)</h3>
+                    <p id="store-revenue-total">0€</p>
+                </div>
+
+                <div class="card" style="border-left: 5px solid #8e44ad;">
+                    <h3 style="font-size: 13px; color: #7f8c8d;">ЗАГАЛЬНИЙ ЧИСТИЙ ПРИБУТОК</h3>
+                    <p id="total-combined-profit">0€</p>
+                </div>
+                <div class="card" style="border-left: 5px solid #e67e22;">
+                    <h3 style="font-size: 13px; color: #7f8c8d;">ЧИСТИЙ ПРИБУТОК (САЛОН)</h3>
+                    <p id="salon-profit-total">0€</p>
+                </div>
+                <div class="card" style="border-left: 5px solid #2ecc71;">
+                    <h3 style="font-size: 13px; color: #7f8c8d;">ЧИСТИЙ ПРИБУТОК (МАГАЗИН)</h3>
+                    <p id="store-profit-total">0€</p>
+                </div>
+            </div>
+        </section>
+
+<section id="bookings" class="admin-section" style="display:none;">
+    <h2>Розклад записів</h2>
+    
+    <div class="admin-filters-panel" style="background: #f9f9f9; padding: 20px; border-radius: 10px; margin-bottom: 20px; display: flex; flex-wrap: wrap; gap: 15px; align-items: flex-end;">
+        
+        <div class="filter-group">
+            <label style="display:block; margin-bottom: 5px;">Пошук клієнта:</label>
+            <input type="text" id="admin-search" placeholder="Ім'я або номер..." oninput="loadAdminBookings()" style="padding: 8px; border-radius: 5px; border: 1px solid #ddd; width: 200px;">
+        </div>
+
+        <div class="filter-group">
+            <label style="display:block; margin-bottom: 5px;">Дата:</label>
+            <input type="date" id="admin-calendar-filter" onchange="loadAdminBookings()" style="padding: 7px; border-radius: 5px; border: 1px solid #ddd;">
+        </div>
+
+        <div class="filter-group">
+            <label style="display:block; margin-bottom: 5px;">Статус:</label>
+            <select id="admin-status-filter" onchange="loadAdminBookings()" style="padding: 8px; border-radius: 5px; border: 1px solid #ddd;">
+                <option value="all">Усі записи</option>
+                <option value="Обробка">В обробці</option>
+                <option value="Підтверджено">Підтверджені</option>
+                <option value="Завершено">Завершені</option>
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <label style="display:block; margin-bottom: 5px;">Майстер:</label>
+            <select id="master-filter" onchange="loadAdminBookings()" style="padding: 8px; border-radius: 5px; border: 1px solid #ddd;">
+                <option value="all">Всі майстри</option>
+            </select>
+        </div>
+
+    </div>
+
+    <div id="admin-bookings-list" class="admin-table-container">
+        </div>
+</section>
+   
+
+
+<section id="orders-manage" class="admin-section" style="display:none;">
+    <h2>Керування замовленнями товарів</h2>
+
+    <div class="stats-cards salon-finance-summary" style="margin-bottom: 20px;">
+        <div class="card" style="border-left: 5px solid #3498db;">
+            <h3>Виручка (Завершені)</h3>
+            <p id="orders-total-revenue">0€</p>
+        </div>
+        <div class="card" style="border-left: 5px solid #27ae60;">
+            <h3>Чистий прибуток</h3>
+            <p id="orders-net-profit">0€</p>
+        </div>
+        <div class="card" style="border-left: 5px solid #f1c40f;">
+            <h3>Середній чек</h3>
+            <p id="orders-avg-check">0€</p>
+        </div>
+    </div>
+    <div class="admin-filters-panel order-filters">
+        <div class="filter-group">
+            <label>Пошук клієнта/телефону:</label>
+            <input type="text" id="order-search" placeholder="Ім'я або номер..." oninput="loadAdminOrders()">
+        </div>
+        <div class="filter-group">
+    <label>Дата замовлення:</label>
+    <input type="date" id="order-date-filter" onchange="loadAdminOrders()">
+</div>
+        
+        <div class="filter-group">
+            <label>Статус замовлення:</label>
+            <select id="order-status-filter" onchange="loadAdminOrders()">
+                <option value="all">Всі замовлення</option>
+                <option value="Нове">Нові</option>
+                <option value="Пакується">Пакуються</option>
+                <option value="Відправлено">Відправлені</option>
+                <option value="Завершено">Завершені</option>
+                <option value="Скасовано клієнтом">Скасовані</option>
+            </select>
+        </div>
+    </div>
+
+    <div id="admin-orders-list" class="admin-table-container">
+        </div>
+</section>
+
+
+
+    <section id="staff" class="admin-section" style="display:none;">
+    <h2>Фінанси та Співробітники</h2>
+    
+    <div class="stats-cards salon-finance-summary" style="margin-bottom: 30px;">
+        <div class="card" style="border-left: 5px solid #27ae60;">
+            <h3>Загальний оборот</h3>
+            <p id="total-salon-revenue">0€</p>
+        </div>
+        <div class="card" style="border-left: 5px solid #e74c3c;">
+            <h3>Витрати на ЗП</h3>
+            <p id="total-salon-payroll">0€</p>
+        </div>
+        <div class="card" style="border-left: 5px solid #D1957B;">
+            <h3>Чистий прибуток</h3>
+            <p id="total-salon-profit">0€</p>
+        </div>
+    </div>
+
+    <div class="admin-controls">
+    <select id="salary-month-filter" onchange="loadStaffFinances()">
+        <option value="">Виберіть місяць</option>
+        <option value="01">Січень</option>
+        <option value="02">Лютий</option>
+        <option value="03">Березень</option>
+        <option value="04">Квітень</option>
+        <option value="05">Травень</option>
+        <option value="06">Червень</option>
+        <option value="07">Липень</option>
+        <option value="08">Серпень</option>
+        <option value="09">Вересень</option>
+        <option value="10">Жовтень</option>
+        <option value="11">Листопад</option>
+        <option value="12">Грудень</option>
+    </select>
+
+    <input type="date" id="salary-day-filter" onchange="loadStaffFinances()">
+    
+    <button onclick="resetStaffFilters()" class="mini-btn">Скинути (Поточний місяць)</button>
+</div>
+    <div id="staff-list" class="staff-cards-container"></div>
+</section>
+
+
+
+
+<section id="shop-manage" class="admin-section" style="display:none;">
+            <h2>Керування Магазином</h2>
+
+            <div class="stats-cards salon-finance-summary" style="margin-bottom: 30px;">
+                <div class="card" style="border-left: 5px solid #e74c3c;">
+                    <h3>Вартість складу (Витрачено)</h3>
+                    <p id="total-stock-cost">0€</p>
+                </div>
+                <div class="card" style="border-left: 5px solid #27ae60;">
+                    <h3>Потенційна виручка</h3>
+                    <p id="total-stock-revenue">0€</p>
+                </div>
+                <div class="card" style="border-left: 5px solid #D1957B;">
+                    <h3>Очікуваний чистий прибуток</h3>
+                    <p id="total-stock-profit">0€</p>
+                </div>
+            </div>
+            
+            <div class="admin-table-container" style="margin-bottom: 30px;">
+                <h3>Додати новий товар</h3>
+                <form id="add-product-form" onsubmit="handleProductAdd(event)" class="admin-controls" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px;">
+                    <input type="text" id="prod-name" placeholder="Назва товару" required>
+                    <input list="category-list" id="prod-category" placeholder="Категорія (виберіть або впишіть)">
+                    <datalist id="category-list"></datalist>
+
+                    <input type="number" id="prod-price" placeholder="Ціна продажу (€)" required>
+                    <input type="number" id="prod-cost" placeholder="Собівартість (€)" required> 
+                    <input type="number" id="prod-stock" placeholder="Кількість (шт)" required>
+                    <input type="text" id="prod-image" placeholder="Фото (напр. cream.png)">
+                    
+                    <button type="submit" class="btn-confirm-admin" style="grid-column: span 3; padding: 12px; font-weight: bold;">+ Зберегти новий товар</button>
+                </form>
+            </div>
+
+            <div class="admin-table-container">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                    <h3>Список всіх товарів (Редагування)</h3>
+                    <button onclick="saveAllProductChanges()" class="btn-confirm-admin" style="background: #27ae60; color: white; padding: 10px 20px;">
+                        💾 Зберегти всі зміни
+                    </button>
+                </div>
+                
+                <div id="admin-products-list"></div>
+                
+                <div style="margin-top: 20px; text-align: right;">
+                    <button onclick="saveAllProductChanges()" class="btn-confirm-admin" style="background: #27ae60; color: white; padding: 12px 30px; font-size: 16px;">
+                        💾 Зберегти всі зміни в таблиці
+                    </button>
+                </div>
+            </div>
+        </section>
+
+
+
+ </main>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/admin.js"></script>
+<script src="js/admin_bookings.js"></script>
+<script src="js/admin_staff.js"></script>
+<script src="js/admin_shop.js"></script>
+<script src="js/admin_orders.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,125 @@
+[{
+  "_id": {
+    "$oid": "69c7f12599fe92f7fd2c1cc0"
+  },
+  "customerName": "Данило Семенюк",
+  "phone": "0975305511",
+  "address": "ЛЬвів Дерельна 25",
+  "items": [
+    {
+      "name": "NOUNOU банановий кондиціонер",
+      "quantity": 1,
+      "price": 29
+    },
+    {
+      "name": "NOUNOU кондиціонер з екстрактом зерна",
+      "quantity": 1,
+      "price": 29
+    }
+  ],
+  "totalPrice": 58,
+  "paymentMethod": "cash",
+  "status": "Скасовано клієнтом",
+  "createdAt": {
+    "$date": "2026-03-28T15:17:57.945Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c7f5218e3fece9c78e922e"
+  },
+  "customerName": "Данило Семенюк",
+  "phone": "0975305511",
+  "address": "мвідлдівьд",
+  "items": [
+    {
+      "name": "NOUNOU банановий кондиціонер",
+      "quantity": 13,
+      "price": 29
+    }
+  ],
+  "totalPrice": 377,
+  "paymentMethod": "cash",
+  "status": "Скасовано клієнтом",
+  "createdAt": {
+    "$date": "2026-03-28T15:34:57.460Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c7f84929e422fcc260a45a"
+  },
+  "customerName": "Данило Семенюк",
+  "phone": "0975305511",
+  "address": "юлдл",
+  "items": [
+    {
+      "name": "NOUNOU банановий кондиціонер",
+      "quantity": 36,
+      "price": 29
+    }
+  ],
+  "totalPrice": 1044,
+  "paymentMethod": "cash",
+  "status": "Скасовано клієнтом",
+  "createdAt": {
+    "$date": "2026-03-28T15:48:25.289Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c7fa2f8445d883ad886e25"
+  },
+  "customerName": "Данило Семенюк",
+  "phone": "0975305511",
+  "address": "мівам",
+  "items": [
+    {
+      "name": "NOUNOU кондиціонер з лавандою",
+      "quantity": 10,
+      "price": 29
+    }
+  ],
+  "totalPrice": 290,
+  "paymentMethod": "credit-card",
+  "status": "Скасовано клієнтом",
+  "createdAt": {
+    "$date": "2026-03-28T15:56:31.907Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c8049e215a5d5581c2dafd"
+  },
+  "customerName": "доваліовтдлм і",
+  "phone": "1",
+  "address": "умп",
+  "items": [
+    {
+      "name": "NOUNOU кондиціонер з екстрактом Манго",
+      "quantity": 10,
+      "price": 30
+    },
+    {
+      "name": "NOUNOU кондиціонер з лавандою",
+      "quantity": 10,
+      "price": 29
+    },
+    {
+      "name": "NOUNOU кондиціонер з екстрактом зерна",
+      "quantity": 1,
+      "price": 29
+    }
+  ],
+  "totalPrice": 619,
+  "paymentMethod": "cash",
+  "status": "Нове",
+  "createdAt": {
+    "$date": "2026-03-28T16:41:02.681Z"
+  },
+  "__v": 0
+}]

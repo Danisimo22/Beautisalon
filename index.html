@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty Room - Салон Краси</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/team.css">
+    <link rel="stylesheet" href="css/price_list.css">
+    <link rel="stylesheet" href="css/portfolio.css">
+    <link rel="stylesheet" href="css/contacts.css">
+    <link rel="stylesheet" href="css/booking.css">
+
+     <link rel="icon" href="img/favicon.ico">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="magnific-popup/magnific-popup.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+
+</head>
+<body class="home-page">
+    <div class="main-wrapper">
+
+<header id="main-header">
+    <div class="main-wrapper"> <nav>
+            <a href="index.html" class="MLVCH-header">MLVCH</a>
+            <div class="header-links">
+                <a href="#about-us-main-page">Про нас</a>
+                <a href="#team-main-page">Команда</a>
+                <a href="#price-main-page">Ціни</a>
+                <a href="#portfolio-main-page">Портфоліо</a>
+                <a href="#contact-main-page">Зв'язок</a>
+                <a href="shop.html" class="shop-btn">Магазин</a>
+            </div>
+            
+            <div class="header-icons">
+
+                <a href="account.html">
+                    <img src="img/user.png" class="account" alt="Cart" width="35" height="35">
+                </a>
+
+                <a href="cart.html">
+                    <img src="img/sell.png" class="shopping-bag" alt="Cart" width="35" height="35">
+                </a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+
+    <section class="about" id="about-us-main-page">
+    <div class="team-container"> <div class="about-top">
+            <div class="about-images-main">
+                <img src="img/f5d8f5176211927.64c0fe5c6ae63.jpg" alt="Salon" class="main-img" id="main-photo">
+            </div>
+
+            <div class="about-text">
+                <h2>Про нас</h2>
+                    <p><strong>Салон "MLVCH BEAUTY HUB"</strong> — це унікальний простір у центрі міста, де високий сервіс зустрівся з затишною атмосферою. Ми створили місце, куди приходять не просто за послугою, а за натхненням та відпочинком від щоденної метушні.</p>
+                    <p>Ми використовуємо лише преміальну косметику та стерильні інструменти, адже ваша безпека та здоров'я — наш головний пріоритет.</p>
+                    <p>Ми віримо, що краса в деталях. Тому в нашому просторі враховано все: від м'якого світла та авторського плейлиста до ідеальної кави.</p>
+                <button class="btn-book" onclick="openModal()">Записатися</button>
+            </div>
+        </div>
+
+        <div class="about-bottom">
+            <div class="thumb-grid">
+                <img src="img/458155176211927.64c0fe5c71df2.jpg" alt="thumb" onclick="swapImages(this)">
+                <img src="img/ebf97e176211927.64c0fe59a9813.jpg" alt="thumb" onclick="swapImages(this)">
+                <img src="img/9d39c3176211927.64c0fe59ab3df.jpg" alt="thumb" onclick="swapImages(this)">
+                <img src="img/2e49bb176211927.64c0fe59ac0dd.jpg" alt="thumb" onclick="swapImages(this)">
+                <img src="img/c28947176211927.64c0fe59aee4b.jpg" alt="thumb" onclick="swapImages(this)">
+            </div>
+
+            <a href="https://www.instagram.com/ya.karolinaa?igsh=YmlzcTh0Yzdpam4x&utm_source=qr" target="_blank" class="insta-link-card">
+                <div class="insta-card-text">
+                    <strong>BEAUTY ROOM</strong>
+                    <span>більше в нашому інстаграмі</span>
+                </div>
+                <div class="arrow-icon">↗</div>
+            </a>
+        </div>
+
+    </div>
+</section>
+
+
+    
+<section class="team" id="team-main-page">
+    <div class="team-container">
+        <h2>Команда</h2>
+        <div class="underline"></div> 
+        
+        <div class="swiper team-slider">
+            <div class="swiper-wrapper">
+                
+                <div class="swiper-slide">
+                    <div class="master-card">
+                        <img src="img/master1.jpg" alt="Анна Морозова">
+                        <div class="master-info">
+                            <h3>Анна Морозова</h3>
+                            <p>Top-майстер манікюру</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="master-card">
+                        <img src="img/master2.jpg" alt="Марія Ковальчук">
+                        <div class="master-info">
+                            <h3>Марія Ковальчук</h3>
+                            <p>Майстер нігтьового сервісу</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="master-card">
+                        <img src="img/master3.jpg" alt="Олена Степаненко">
+                        <div class="master-info">
+                            <h3>Олена Степаненко</h3>
+                            <p>Спеціаліст подолог-педикюр</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="master-card">
+                        <img src="img/master4.jpg" alt="Дмитро Бондар">
+                        <div class="master-info">
+                            <h3>Дмитро Бондар</h3>
+                            <p>Стиліст по волоссю</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="master-card">
+                        <img src="img/master5.jpg" alt="Вікторія Лисенко">
+                        <div class="master-info">
+                            <h3>Вікторія Лисенко</h3>
+                            <p>Колорист та Lash-мейкер</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="master-card">
+                        <img src="img/master6.jpg" alt="Катерина Мельник">
+                        <div class="master-info">
+                            <h3>Катерина Мельник</h3>
+                            <p>Brow & Lash Expert</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="master-card">
+                        <img src="img/master7.jpg" alt="Світлана Павлюк">
+                        <div class="master-info">
+                            <h3>Світлана Павлюк</h3>
+                            <p>Nail Design Master</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="master-card">
+                        <img src="img/master8.jpg" alt="Олександр Шевченко">
+                        <div class="master-info">
+                            <h3>Олександр Шевченко</h3>
+                            <p>Топ-стиліст (AirTouch Expert)</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="team-controls">
+            <div class="swiper-pagination team-pagination"></div>
+            <div class="team-navigation">
+                <div class="team-prev"></div> 
+                <div class="team-next"></div> 
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<section class="price-list" id="price-main-page">
+    <div class="team-container">
+        <h2>Ціни</h2>
+        <div class="underline"></div>
+
+        <div id="dynamic-price-container" class="procedures-container">
+            <p style="text-align: center; opacity: 0.5;">Завантаження прайс-листа...</p>
+        </div>
+    </div>
+</section>
+
+<script src="js/price.js"></script>
+
+
+
+
+
+
+<section class="portfolio-section" id="portfolio-main-page">
+    <div class="team-container">
+        <h2>Портфоліо</h2>
+        <div class="underline"></div> 
+
+        <div class="popup-gallery">
+            <a href="img/main-galerea-1.jpg"><img src="img/main-galerea-1.jpg" alt="work"></a>
+            <a href="img/main-galerea-2.jpg"><img src="img/main-galerea-2.jpg" alt="work"></a>
+            <a href="img/main-galerea-3.jpg"><img src="img/main-galerea-3.jpg" alt="work"></a>
+            <a href="img/main-galerea-4.jpg"><img src="img/main-galerea-4.jpg" alt="work"></a>
+            <a href="img/main-galerea-5.jpg"><img src="img/main-galerea-5.jpg" alt="work"></a>
+            <a href="img/main-galerea-6.jpg"><img src="img/main-galerea-6.jpg" alt="work"></a>
+            <a href="img/main-galerea-7.jpg"><img src="img/main-galerea-7.jpg" alt="work"></a>
+            <a href="img/main-galerea-8.jpg"><img src="img/main-galerea-8.jpg" alt="work"></a>
+            <a href="img/main-galerea-9.jpg"><img src="img/main-galerea-9.jpg" alt="work"></a>
+            <a href="img/main-galerea-10.jpg"><img src="img/main-galerea-10.jpg" alt="work"></a>
+        </div>
+
+        <div class="portfolio-footer">
+            <a href="https://www.instagram.com/ya.karolinaa?igsh=YmlzcTh0Yzdpam4x&utm_source=qr" target="_blank" class="insta-btn-link">
+                Якщо хочеш побачити більше цікавого, підписуйся на наш INSTAGRAM ↗
+            </a>
+        </div>
+    </div>
+</section>
+
+
+
+
+<section class="contacts-section" id="contact-main-page">
+    <div class="team-container">
+        <h2>CONTACTS</h2>
+        <div class="underline"></div>
+
+        <div class="contacts-wrapper">
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2573.0682498214243!2d24.013583576856525!3d49.8361536313885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473add797c2e8a7b%3A0x6436f56860f4e69b!2z0LLRg9C70LjRhtGPINCh0YLQtdC_0LDQvdCwINCR0LDQvdC00LXRgNC4LCAxNSwg0JvRjNCy0ZbQsiwg0JvRjNCy0ZbQstGB0YzQutCwINC-0LHQu9Cw0YHRgtGMLCA3OTAwMA!5e0!3m2!1suk!2sua!4v1710000000000!5m2!1suk!2sua" 
+                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="main-footer">
+    <div class="team-container">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <h3>MALEVICH</h3>
+                <p>Салони краси, де піклуються про якість та емоції.</p>
+            </div>
+            <div class="footer-cta">
+                <p>Створіть свій новий образ вже сьогодні!</p>
+                <button class="btn-book" onclick="openModal()">Онлайн запис</button>
+            </div>
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <div class="footer-bottom">
+            <div class="footer-contact-info">
+                <div class="info-item">
+                    <strong>Телефон:</strong>
+                    <p>+38 073 500 07 22</p>
+                </div>
+                <div class="info-item">
+                    <strong>Email:</strong>
+                    <p>malevich@gmail.com</p>
+                </div>
+                <div class="info-item">
+                    <strong>Адреса:</strong>
+                    <p>Львів, вул. Степана Бандери, 15</p>
+                </div>
+                <div class="info-item">
+                    <strong>Графік:</strong>
+                    <p>ПН-НД 9:00-20:00</p>
+                </div>
+            </div>
+
+            <div class="footer-socials">
+                <a href="https://t.me/viktoriia_dikhtiarenko" target="_blank">
+                    <img src="img/footer-telegram.png" alt="Telegram">
+                </a>
+                <a href="https://www.instagram.com/ya.karolinaa?igsh=YmlzcTh0Yzdpam4x&utm_source=qr" target="_blank">
+                    <img src="img/footer-instagram.png" alt="Instagram">
+                </a>
+            </div>
+        </div>
+        
+        <div class="footer-copyright">
+            <p>&copy; 2026 MALEVICH Beauty Hub. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+   
+
+
+<div id="booking-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <h3>Записатися на візит</h3>
+        <p>Залиште свої дані, і ми підберемо для вас ідеальний час.</p>
+        
+        <form id="booking-form">
+            <div class="input-group">
+                <input type="text" id="user-name" placeholder="Ім'я" required>
+            </div>
+            <div class="input-group">
+                <input type="text" id="user-surname" placeholder="Прізвище" required>
+            </div>
+            <div class="input-group">
+                <input type="tel" id="user-phone" placeholder="+380..." required>
+            </div>
+
+            <div class="input-group">
+                <select id="select-category" required onchange="updateSubServices()">
+                    <option value="" disabled selected>Оберіть категорію</option>
+                    <option value="Манікюр">Манікюр</option>
+                    <option value="Педикюр">Педикюр</option>
+                    <option value="Брови та вії">Брови та вії</option>
+                    <option value="Волосся">Волосся</option>
+                </select>
+            </div>
+
+            <div class="input-group hidden-element" id="sub-service-wrapper">
+                <select id="select-service" required onchange="displayPrice()">
+                    <option value="" disabled selected>Яка саме процедура?</option>
+                </select>
+            </div>
+
+            <div id="price-display" class="price-info-box hidden-element">
+                <span class="price-label">Вартість: </span>
+                <span id="service-price">0</span>
+                <span> €</span>
+            </div>
+
+            <div class="input-group">
+                <select id="select-master" required>
+                    <option value="" disabled selected>Оберіть майстра</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <input type="date" id="booking-date" required>
+            </div>
+
+            <div class="input-group">
+                <select id="booking-time" required>
+                    <option value="" disabled selected>Оберіть час</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn-submit">Підтвердити запис</button>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+    </div>
+</div>
+    </div>
+</div>
+
+ <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/booking.js"></script>
+    <script src="js/price.js"></script>
+
+
+</div>
+</body>
+</html>

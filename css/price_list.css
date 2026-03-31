@@ -1,0 +1,83 @@
+.price-list { 
+    padding: 20px 0; 
+    background: #f9f9f9; 
+}
+
+.price-category {
+    margin-bottom: 15px;
+}
+
+.category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    cursor: pointer;
+}
+
+.category-header h3 {
+    font-size: 22px;
+    font-weight: 300; /* Жирний заголовок як на скрині */
+    color: #333;
+    margin: 0;
+}
+
+/* Кружечок зі стрілкою */
+.arrow-circle {
+    width: 32px;
+    height: 32px;
+    background: #333;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s ease;
+}
+
+.arrow-circle svg {
+    width: 18px;
+    height: 18px;
+    stroke: #fff;
+}
+
+/* Анімація при відкритті */
+.category-header.active .arrow-circle {
+    transform: rotate(180deg);
+}
+
+/* Список процедур */
+.procedures-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+}
+
+.procedures-items.show {
+    max-height: 2000px;
+    transition: max-height 1s ease-in-out;
+    padding-bottom: 20px;
+}
+
+.procedure {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: none; /* Прибираємо лінії, щоб було чисто */
+    font-size: 16px;
+    color: #555;
+}
+
+.procedure .price {
+    font-weight: 400;
+    color: #333;
+    white-space: nowrap;
+    margin-left: 20px;
+}
+
+/* Додамо легкий ховер на рядки */
+.procedure:hover {
+    color: #000;
+}

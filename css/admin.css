@@ -1,0 +1,321 @@
+/* --- ЗАГАЛЬНІ СТИЛІ АДМІН-ПАНЕЛІ --- */
+.admin-page {
+    display: flex;
+    background: #f4f7f6;
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* --- БІЧНА ПАНЕЛЬ --- */
+.admin-sidebar {
+    width: 280px;
+    background: #333;
+    color: white;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+.admin-sidebar h2 {
+    font-family: 'Alumni Sans', sans-serif;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    font-size: 28px;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    color: #ccc;
+    text-align: left;
+    padding: 15px 0;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-bottom: 1px solid #444;
+}
+
+.nav-btn:hover, .nav-btn.active {
+    color: #D1957B;
+}
+
+.btn-logout-admin {
+    margin-top: auto;
+    background: #444;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* --- ГОЛОВНА ЧАСТИНА --- */
+.admin-main {
+    flex: 1;
+    padding: 40px;
+    overflow-y: auto;
+}
+
+.admin-section h1, .admin-section h2 {
+    margin-bottom: 25px;
+}
+
+/* --- КАРТКИ ДАШБОРДУ --- */
+.stats-cards {
+    display: flex;
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    flex: 1;
+}
+
+.card h3 {
+    color: #888;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* --- ТАБЛИЦЯ ТА КОНТРОЛІ --- */
+.admin-table-container {
+    background: white;
+    margin-top: 20px;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+}
+
+.admin-controls {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.admin-controls select {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    outline: none;
+    background: white;
+    cursor: pointer;
+}
+
+/* --- СТИЛІЗАЦІЯ КАЛЕНДАРЯ --- */
+#admin-calendar-filter {
+    position: relative;
+    padding: 10px 15px;
+    border-radius: 12px;
+    border: 1px solid #eee;
+    background: #fff url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23D1957B" viewBox="0 0 16 16"><path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/></svg>') no-repeat;
+    background-position: right 12px center;
+    padding-right: 40px;
+    font-weight: 600;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Робимо так, щоб клікалося по всій площі */
+#admin-calendar-filter::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-table th, .admin-table td {
+    text-align: left;
+    padding: 15px;
+    border-bottom: 1px solid #f4f4f4;
+}
+
+.admin-table th {
+    background-color: #fafafa;
+    color: #999;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- СТАТУСИ --- */
+.status-pending { color: #f1c40f; }   /* Жовтий */
+.status-confirmed { color: #27ae60; } /* Зелений */
+.status-completed { color: #bdc3c7; } /* Сірий */
+
+.row-completed {
+    background-color: #fcfcfc;
+    opacity: 0.7;
+}
+
+/* --- КНОПКИ ДІЙ --- */
+.admin-table td:last-child {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    min-width: 230px;
+}
+
+.admin-table button {
+    padding: 7px 12px;
+    font-size: 12px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.btn-confirm-admin {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.btn-confirm-admin:hover {
+    background: #2e7d32;
+    color: white;
+}
+
+.btn-complete-admin {
+    background: #d1ecf1;
+    color: #0c5460;
+}
+
+.btn-complete-admin:hover {
+    background: #0c5460;
+    color: white;
+}
+
+.btn-delete-admin {
+    background: #ffeded;
+    color: #e74c3c;
+}
+
+.btn-delete-admin:hover {
+    background: #e74c3c;
+    color: white;
+}
+
+/* --- КАРТКИ СПІВРОБІТНИКІВ --- */
+.staff-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.staff-card {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+}
+
+.staff-info h3 {
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.staff-info p {
+    color: #888;
+    font-size: 13px;
+}
+
+.staff-money {
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.money-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.money-item.highlight {
+    color: #D1957B;
+    font-weight: 800;
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+.staff-card {
+    cursor: default;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.staff-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.staff-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    margin-top: 0;
+}
+
+.staff-card.open {
+    border: 1px solid #D1957B;
+}
+
+.staff-card.open .staff-details {
+    max-height: 1000px;
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.staff-booking-row {
+    display: grid;
+    grid-template-columns: 1fr 2fr 0.5fr 1fr;
+    font-size: 12px;
+    padding: 8px 0;
+    border-bottom: 1px solid #fafafa;
+    align-items: center;
+}
+
+.staff-booking-row.completed { color: #888; }
+
+.mini-btn {
+    padding: 4px 8px;
+    background: #d4edda;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 10px;
+}
+
+
+.admin-table input {
+    border: 1px solid #eee;
+    padding: 5px;
+    border-radius: 4px;
+    font-family: inherit;
+}

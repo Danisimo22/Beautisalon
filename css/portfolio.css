@@ -1,0 +1,133 @@
+/* --- СЕКЦІЯ ПОРТФОЛІО --- */
+.portfolio-section {
+    padding: 20px 0;
+    background-color: #f9f9f9; /* Той самий фон, що й всюди */
+}
+
+/* Сітка галереї */
+.popup-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Автоматична кількість колонок */
+    gap: 15px;
+    margin-top: 40px;
+}
+
+.popup-gallery a {
+    display: block;
+    overflow: hidden;
+    border-radius: 15px; /* Заокруглення як у карток майстрів */
+    height: 220px; /* Фіксована висота для рівної сітки */
+}
+
+.popup-gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Фото не розтягується */
+    transition: transform 0.5s ease, filter 0.3s ease;
+}
+
+/* Ефект при наведенні */
+.popup-gallery a:hover img {
+    transform: scale(1.1);
+    filter: brightness(0.8);
+}
+
+/* Текст знизу */
+.portfolio-footer {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.insta-btn-link {
+    text-decoration: none;
+    color: #666;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: 0.3s;
+    border-bottom: 1px solid transparent;
+}
+
+.insta-btn-link:hover {
+    color: #000;
+    border-bottom: 1px solid #000;
+}
+
+
+/* --- СТИЛІ ДЛЯ POPUP ГАЛЕРЕЇ (ЗБІЛЬШЕННЯ ФОТО) --- */
+.portfolio-overlay {
+    display: none; /* Приховано за замовчуванням */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Темний фон */
+    backdrop-filter: blur(5px); /* Легке розмиття фону сайту */
+    z-index: 2000; /* Має бути вище за шапку та все інше */
+    cursor: zoom-out; /* Курсор "зменшити" при наведенні на фон */
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.portfolio-overlay.show {
+    display: flex;
+    opacity: 1;
+}
+
+/* Збільшене фото */
+.portfolio-popup-img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    transform: scale(0.9);
+    transition: transform 0.4s ease;
+    cursor: default; /* Звичайний курсор на самому фото */
+}
+
+.portfolio-overlay.show .portfolio-popup-img {
+    transform: scale(1); /* Плавне збільшення при появі */
+}
+
+/* Кнопка закриття (X) */
+.close-portfolio-popup {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: Arial, sans-serif;
+}
+
+.close-portfolio-popup:hover {
+    color: #ccc;
+    transform: scale(1.1);
+}
+
+/* --- СТРІЛОЧКИ У ПОПАПІ --- */
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: none;
+    font-size: 40px;
+    padding: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    user-select: none;
+    z-index: 2100;
+}
+
+.nav-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.prev-btn { left: 10px; }
+.next-btn { right: 10px; }

@@ -1,0 +1,353 @@
+/* --- ЗАГАЛЬНІ СТИЛІ ТА ОБНУЛЕННЯ --- */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 70px;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background-color: #f9f9f9;
+    color: #363535;
+    margin: 0;
+}
+
+/* Відступ ТІЛЬКИ для Головної сторінки */
+body.home-page {
+    padding-top: 130px; /* Більше місця, щоб "Про нас" не заїжджало */
+}
+
+/* Відступ ТІЛЬКИ для Магазину */
+body.shop-page {
+    padding-top: 10px; /* Менше місця, щоб банер прилягав до меню */
+}
+
+/* Відступ ТІЛЬКИ для Кошика */
+body.cart-page {
+    padding-top: 50px; /* Багато місця, щоб таблиця не липла до верху */
+}
+
+
+/* Контейнер для центрування (wrapper) */
+.main-wrapper, .team-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* --- НАВІГАЦІЯ (ХЕДЕР) --- */
+#main-header {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 70px;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+}
+
+#main-header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.MLVCH-header {
+    font-family: "Saira Extra Condensed", sans-serif;
+    color: #D1957B;
+    font-size: 36px;
+    font-weight: 200;
+    letter-spacing: 3px;
+    text-decoration: none;
+}
+
+.header-links {
+    display: flex;
+    gap: 30px;
+}
+
+.header-links a {
+    font-family: "Alumni Sans", sans-serif;
+    text-decoration: none;
+    color: #363535;
+    font-size: 26px; /* Однаковий розмір всюди */
+    font-weight: 200;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    transition: 0.3s;
+}
+
+.header-links a:hover, .header-links a.active {
+    color: #D1957B;
+}
+
+.shopping-bag {
+    width: 30px;
+    height: 30px;
+     opacity: 0.8;
+}
+
+.account{
+    width: 26px;
+    height: 26px;
+     opacity: 0.8;
+}
+
+/* Окремі стилі для іконки акаунта (якщо треба) */
+.header-icons .account-icon {
+    margin-right: 10px; /* Ще +5px відступу праворуч, якщо gap мало */
+    opacity: 0.8; /* Трохи приглушений колір, як у меню */
+    transition: 0.3s;
+}
+
+/* Стилі для кошика */
+.header-icons .shopping-bag .account{
+    transition: 0.3s;
+}
+
+
+/* Ефект наведення (збільшуємо прозорість) */
+.header-icons a:hover img {
+    opacity: 1;
+}
+
+/* Додатково для самих картинок, щоб не було рамок */
+.header-icons img {
+    border: none;
+    vertical-align: middle;
+}
+
+/* Кнопка "Записатися" */
+.btn-book {
+    background: transparent;
+    border: 1px solid #333;
+    padding: 10px 40px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: fit-content;
+    font-size: 14px;
+    display: inline-block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.btn-book:hover {
+    background: #333;
+    color: white;
+    transform: translateY(-2px);
+}
+
+
+/* --- ФУТЕР --- */
+.main-footer {
+    background-color: #fff; /* Білий фон для чистоти */
+    padding: 20px 0 30px 0;
+    border-top: 1px solid #eee;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 50px;
+}
+
+.footer-brand h3 {
+    font-size: 32px;
+    letter-spacing: 5px;
+    margin: 0 0 10px 0;
+}
+
+.footer-brand p {
+    color: #888;
+    font-size: 14px;
+}
+
+.footer-cta {
+    text-align: right;
+}
+
+.footer-cta p {
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #555;
+}
+
+.footer-divider {
+    height: 1px;
+    background-color: #eee;
+    margin-bottom: 40px;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-contact-info {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    flex: 1;
+}
+
+.info-item strong {
+    display: block;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #aaa;
+    margin-bottom: 5px;
+}
+
+.info-item p {
+    font-size: 14px;
+    margin: 0;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.footer-socials img {
+    width: 35px; /* Зробимо іконки акуратнішими */
+    height: auto;
+    transition: 0.3s;
+    opacity: 0.7;
+}
+
+.footer-socials img:hover {
+    opacity: 1;
+    transform: translateY(-3px);
+}
+
+.footer-copyright {
+    text-align: center;
+    margin-top: 60px;
+    font-size: 12px;
+    color: #ccc;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+
+/* --- МОДАЛЬНЕ ВІКНО --- */
+.modal {
+    display: none; /* Приховано за замовчуванням */
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    z-index: 3000; /* Вище за хедер */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px; right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #aaa;
+    transition: 0.3s;
+}
+
+.close-modal:hover { color: #333; }
+
+.modal-content h3 {
+    font-family: "Saira Extra Condensed", sans-serif;
+    color: #D1957B;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+/* Поля вводу всередині модалки */
+.input-group { margin-bottom: 20px; }
+
+.modal-content input, .modal-content select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    font-family: "Montserrat", sans-serif;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.btn-submit {
+    background-color: #D1957B;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    width: 100%;
+    border-radius: 10px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: #363535;
+}
+
+/* Прибрати підкреслення для всіх посилань у хедері */
+.header-links a, .header-icons a {
+    text-decoration: none;
+    outline: none;
+    border: none;
+}
+
+/* --- СУЧАСНІ СПОВІЩЕННЯ (TOASTS) --- */
+.mlvch-toast {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #27ae60; /* Зелений для успіху */
+    color: white;
+    padding: 16px 24px;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    z-index: 10000;
+    pointer-events: none; /* Щоб не заважали клікати */
+    
+    /* Анімація схованого стану */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+/* Клас для появи */
+.mlvch-toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Клас для помилок (червоний) */
+.mlvch-toast.error {
+    background-color: #e74c3c;
+}

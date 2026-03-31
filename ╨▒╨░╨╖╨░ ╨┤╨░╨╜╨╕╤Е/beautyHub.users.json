@@ -1,0 +1,96 @@
+[{
+  "_id": {
+    "$oid": "69c7079dc58e7cbf8b2c6443"
+  },
+  "name": "Марта",
+  "surname": "Шкодяк",
+  "phone": "0964053607",
+  "createdAt": {
+    "$date": "2026-03-27T22:41:33.364Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c70913f3d4dfc19f8cc983"
+  },
+  "name": "Марта",
+  "surname": "Шкодяк",
+  "phone": "0964053607",
+  "createdAt": {
+    "$date": "2026-03-27T22:47:47.897Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c70db5f3d4dfc19f8cc987"
+  },
+  "name": "Марк",
+  "surname": "Доу",
+  "phone": "1111",
+  "createdAt": {
+    "$date": "2026-03-27T23:07:33.382Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c71eba28bf0f1533324214"
+  },
+  "name": "Данило",
+  "surname": "Семенюк",
+  "phone": "0975305511",
+  "createdAt": {
+    "$date": "2026-03-28T00:20:10.376Z"
+  },
+  "__v": 0,
+  "password": "1111",
+  "address": "Львів, Джерельна 25, квартира 6",
+  "email": "jkndsmd@gmail.com"
+},
+{
+  "_id": {
+    "$oid": "69c72eab9b175eb896cc8360"
+  },
+  "name": "кароша",
+  "surname": "зайка",
+  "phone": "0976859382",
+  "password": "1234",
+  "createdAt": {
+    "$date": "2026-03-28T01:28:11.864Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c7b453cc770f9c05506537"
+  },
+  "name": "Руслана",
+  "surname": "Білокінь",
+  "phone": "0674952373",
+  "password": "12345",
+  "email": "",
+  "address": "",
+  "role": "admin",
+  "createdAt": {
+    "$date": "2026-03-28T10:58:27.983Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c7fe078445d883ad886ea4"
+  },
+  "name": "1",
+  "surname": "1",
+  "phone": "1",
+  "password": "1",
+  "email": "",
+  "address": "",
+  "role": "client",
+  "createdAt": {
+    "$date": "2026-03-28T16:12:55.030Z"
+  },
+  "__v": 0
+}]

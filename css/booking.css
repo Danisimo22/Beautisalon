@@ -1,0 +1,177 @@
+/* --- СТИЛІ МОДАЛЬНОГО ВІКНА ЗАПИСУ MLVCH --- */
+
+/* 1. Основний контейнер (затемнення фону) */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 2000; /* Підняли вище, щоб перекривати все */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Трохи темніше для преміальності */
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(8px); /* Сильніше розмиття */
+}
+
+/* 2. Біла картка модалки */
+.modal-content {
+    background-color: #ffffff;
+    padding: 35px;
+    border-radius: 30px;
+    max-width: 450px;
+    width: 90%;
+    max-height: 85vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+    
+    /* Ховаємо скролбар */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.modal-content::-webkit-scrollbar {
+    display: none;
+}
+
+/* 3. Кнопка закриття (Хрестик) */
+.close-modal {
+    position: absolute;
+    right: 25px;
+    top: 20px;
+    font-size: 26px;
+    cursor: pointer;
+    color: #aaa;
+    transition: 0.3s;
+    z-index: 2100;
+    line-height: 1;
+}
+
+.close-modal:hover {
+    color: #D1957B;
+    transform: rotate(90deg); /* Гарний ефект при наведенні */
+}
+
+/* 4. Тексти в модалці */
+.modal h3 {
+    font-family: 'Alumni Sans', sans-serif;
+    font-size: 32px;
+    color: #D1957B;
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.modal p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    margin-bottom: 25px;
+    line-height: 1.4;
+}
+
+/* 5. Поля вводу та вибору */
+.modal .input-group {
+    margin-bottom: 15px;
+}
+
+.modal input, 
+.modal select {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    outline: none;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.modal input:focus, 
+.modal select:focus {
+    border-color: #D1957B;
+    box-shadow: 0 0 10px rgba(209, 149, 123, 0.2);
+}
+
+/* 6. Блок ціни */
+.price-info-box {
+    margin: 10px 0 20px 0;
+    padding: 15px;
+    background-color: #fff9f6;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px dashed #D1957B;
+}
+
+.price-label {
+    color: #D1957B;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+#service-price {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+    margin: 0 5px;
+}
+
+/* 7. Кнопка підтвердження */
+.btn-submit {
+    width: 100%;
+    padding: 16px;
+    background-color: #D1957B;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    background-color: #b37d65;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(209, 149, 123, 0.3);
+}
+
+/* --- СИЛЬНІ ФІКСИ ДЛЯ СТОРІНКИ КОШИКА (.cart-page) --- */
+/* Ці правила перебивають конфлікти з cart.css */
+
+.cart-page #booking-modal .modal-content {
+    background-color: #ffffff !important;
+}
+
+.cart-page #booking-modal input, 
+.cart-page #booking-modal select {
+    background-color: #ffffff !important; /* Робимо білим замість сірого */
+    margin-bottom: 0 !important;
+    border: 1px solid #eee !important;
+    height: auto !important;
+}
+
+.cart-page #booking-modal .input-group {
+    margin-bottom: 12px !important; /* Контролюємо відступи вручну */
+}
+
+.cart-page #booking-modal h3 {
+    margin-top: 5px !important;
+    margin-bottom: 10px !important;
+}
+
+/* Ховаємо скролбар у кошику примусово */
+.cart-page .modal-content::-webkit-scrollbar {
+    display: none !important;
+}
+
+.hidden-element {
+    display: none !important;
+}

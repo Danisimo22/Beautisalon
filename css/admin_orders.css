@@ -1,0 +1,43 @@
+/* Фільтри замовлень */
+.order-filters {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-end;
+}
+
+.order-filters .filter-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #555;
+    font-weight: 600;
+}
+
+.order-filters input,
+.order-filters select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    outline: none;
+    font-size: 14px;
+}
+
+.order-filters input {
+    width: 250px;
+}
+
+/* Статус селект у таблиці */
+.order-status-select {
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    background: transparent;
+}
+.order-status-select:focus {
+    outline: none;
+}

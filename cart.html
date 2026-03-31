@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shop for high-quality hair care products including shampoos, conditioners, oils, and masks at MLVCH.">
+    <meta name="keywords" content="hair care, shampoo, conditioner, hair mask, oil, MLVCH shop">
+
+    <title>MLVCH кошик</title>
+
+    <link rel="icon" href="img/favicon.ico">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="css/booking.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Alumni+Sans:ital,wght@0,100..900;1,100..900&family=Saira+Extra+Condensed:wght@100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="magnific-popup/magnific-popup.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+</head>
+
+<body class="cart-page">
+    <div class="main-wrapper">
+    <header id="main-header">
+    <div class="main-wrapper"> <nav>
+            <a href="index.html" class="MLVCH-header">MLVCH</a>
+            <div class="header-links">
+                <a href="index.html#about-us-main-page">Про нас</a>
+                <a href="index.html#team-main-page">Команда</a>
+                <a href="index.html#price-main-page">Ціни</a>
+                <a href="index.html#portfolio-main-page">Портфоліо</a>
+                <a href="index.html#contact-main-page">Зв'язок</a>
+                <a href="shop.html" class="active">Магазин</a>
+            </div>
+            
+            <div class="header-icons">
+
+                <a href="account.html">
+                    <img src="img/user.png" class="account" alt="Cart" width="35" height="35">
+                </a>
+
+                <a href="cart.html">
+                    <img src="img/sell.png" class="shopping-bag" alt="Cart" width="35" height="35">
+                </a>
+            </div>
+        </nav>
+    </div>
+</header>
+  
+        <main id="cart">
+            <div id="cart-content" class="cart-table-margin">
+                <table id="cart-table" class="cart-table">
+                    <thead>
+                        <tr>
+                            <th class="th-product">Продукт</th>
+                            <th>Ціна</th>
+                            <th>Кількість</th>
+                            <th>Сума</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cart-items">
+                        </tbody>
+                </table>
+                <div class="total-pr">
+                    <p id="total-container">Разом: <span id="total-price">0</span>€</p>
+                </div>
+                <button id="checkout-button" class="checkout-button-center">Перейти до оплати</button>
+            </div>
+
+            <div id="empty-cart-message" class="empty-cart-message" style="display: none;">
+                <p>ТВІЙ КОШИК ПУСТИЙ:(</p>
+                <p>Купи свої омріяні продукти в один клік!</p>
+                <a href="shop.html"><button>Перейти до магазину</button></a>
+            </div>
+
+            <div id="checkout-form" style="display: none;">
+                <h2>Інформація про доставку</h2>
+                <form id="payment-form">
+                    <label for="name">ПІБ:</label>
+                    <input type="text" id="name" required placeholder="ПІБ" pattern="[A-Za-zА-Яа-яЁёІіЇїЄє\s]+" title="Введіть лише літери" />
+
+                    <label for="telephone">Номер телефону:</label>
+                    <input type="tel" id="telephone" required placeholder="Номер телефону" pattern="\+?[0-9\s\-()]{7,15}" />
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required placeholder="Email" />
+
+                    <label for="address">Адреса:</label>
+                    <input type="text" id="address" required placeholder="Адреса" />
+
+                    <label for="payment-method">Спосіб оплати:</label>
+                    <select id="payment-method" required onchange="toggleCardInfo()">
+                        <option value="">Оберіть спосіб оплати</option>
+                        <option value="credit-card">Карта</option>
+                        <option value="cash">Готівка</option>
+                    </select>
+
+                    <div id="card-info" class="card-info" style="display: none;">
+                        <input type="text" id="card-number" placeholder="Номер карти (16 цифр)" pattern="\d{16}" />
+                        <input type="text" id="expiration-date" placeholder="MM/YY" pattern="^(0[1-9]|1[0-2])\/([0-9]{2})$" />
+                        <input type="text" id="cvv" placeholder="CVV" pattern="\d{3}" />
+                    </div>
+
+                    <button type="submit">Підтвердити</button>
+                </form>
+            </div>
+
+            <div id="success-message" class="success-message" style="display: none;">
+                <h2>Оплата успішна!</h2>
+                <p>Дякуємо за Вашу покупку.</p>
+                <a href="shop.html"><button class="continue-shopping-btn">Продовжити покупки</button></a>
+            </div>
+        </main>
+
+        <footer class="main-footer">
+            <div class="team-container">
+                <div class="footer-top">
+                    <div class="footer-brand">
+                        <h3>MALEVICH</h3>
+                        <p>Салони краси, де піклуються про якість та емоції.</p>
+                    </div>
+                    <div class="footer-cta">
+                        <p>Створіть свій новий образ вже сьогодні!</p>
+                        <button class="btn-book" onclick="openModal()">Онлайн запис</button>
+                    </div>
+                </div>
+                <div class="footer-divider"></div>
+                <div class="footer-bottom">
+                    <div class="footer-contact-info">
+                        <div class="info-item"><strong>Телефон:</strong><p>+38 073 500 07 22</p></div>
+                        <div class="info-item"><strong>Email:</strong><p>malevich@gmail.com</p></div>
+                        <div class="info-item"><strong>Адреса:</strong><p>Львів, вул. Степана Бандери, 15</p></div>
+                    </div>
+                    <div class="footer-socials">
+                <a href="https://t.me/viktoriia_dikhtiarenko" target="_blank">
+                    <img src="img/footer-telegram.png" alt="Telegram">
+                </a>
+                <a href="https://www.instagram.com/ya.karolinaa?igsh=YmlzcTh0Yzdpam4x&utm_source=qr" target="_blank">
+                    <img src="img/footer-instagram.png" alt="Instagram">
+                </a>
+            </div>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2026 MALEVICH Beauty Hub. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+       
+<div id="booking-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <h3>Записатися на візит</h3>
+        <p>Залиште свої дані, і ми підберемо для вас ідеальний час.</p>
+        
+        <form id="booking-form">
+            <div class="input-group">
+                <input type="text" id="user-name" placeholder="Ім'я" required>
+            </div>
+            <div class="input-group">
+                <input type="text" id="user-surname" placeholder="Прізвище" required>
+            </div>
+            <div class="input-group">
+                <input type="tel" id="user-phone" placeholder="+380..." required>
+            </div>
+
+            <div class="input-group">
+                <select id="select-category" required onchange="updateSubServices()">
+                    <option value="" disabled selected>Оберіть категорію</option>
+                    <option value="Манікюр">Манікюр</option>
+                    <option value="Педикюр">Педикюр</option>
+                    <option value="Брови та вії">Брови та вії</option>
+                    <option value="Волосся">Волосся</option>
+                </select>
+            </div>
+
+            <div class="input-group hidden-element" id="sub-service-wrapper">
+                <select id="select-service" required onchange="displayPrice()">
+                    <option value="" disabled selected>Яка саме процедура?</option>
+                </select>
+            </div>
+
+            <div id="price-display" class="price-info-box hidden-element">
+                <span class="price-label">Вартість: </span>
+                <span id="service-price">0</span>
+                <span> €</span>
+            </div>
+
+            <div class="input-group">
+                <select id="select-master" required>
+                    <option value="" disabled selected>Оберіть майстра</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <input type="date" id="booking-date" required>
+            </div>
+
+            <div class="input-group">
+                <select id="booking-time" required>
+                    <option value="" disabled selected>Оберіть час</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn-submit">Підтвердити запис</button>
+        </form>
+    </div>
+</div>
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+          <script src="js/script.js"></script>
+        <script src="js/booking.js"></script>
+        <script src="js/cart.js"></script>
+
+        
+        
+    </div>
+</body>
+</html>

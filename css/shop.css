@@ -1,0 +1,193 @@
+
+/* --- ГОЛОВНИЙ БАНЕР МАГАЗИНУ (БЕЗ ВІДСТУПУ) --- */
+.shop-main {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    margin-top: 0; /* Прибрали відступ, щоб прилягало до хедеру */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Щоб картинка в банері була фоном */
+.pelena img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.shop-main::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 0;
+}
+
+.shop-main h3 {
+    font-family: "Saira Extra Condensed", sans-serif;
+    color: #D1957B;
+    font-size: clamp(60px, 10vw, 120px);
+    font-weight: 900;
+    z-index: 1;
+    margin: 0;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+/* --- СІТКА ТОВАРІВ ТА ІНШЕ --- */
+.shop-products {
+    max-width: 1200px;
+    margin: 40px auto 80px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 30px;
+    padding: 0 30px;
+}
+
+
+/* Тільки для сторінки магазину */
+body.shop-page {
+    padding-top: 0; 
+}
+
+
+.pelena img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+
+
+/* --- ФІЛЬТРИ ТА СОРТУВАННЯ --- */
+.sort-filter {
+    max-width: 1200px;
+    margin: 40px auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    font-family: "Montserrat", sans-serif;
+}
+
+.sort-filter select {
+    padding: 8px 15px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-family: "Montserrat", sans-serif;
+    color: #363535;
+    outline: none;
+    cursor: pointer;
+}
+
+/* --- СІТКА ТОВАРІВ --- */
+.shop-products {
+    max-width: 1200px;
+    margin: 0 auto 80px;
+    display: grid;
+    /* Робимо 4 колонки, які стають 2 на планшетах */
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 30px;
+    padding: 0 20px;
+}
+
+.product {
+    background: white;
+    padding: 15px;
+    border-radius: 20px;
+    position: relative;
+    transition: 0.3s;
+}
+
+.product:hover {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.product-name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Montserrat", sans-serif;
+    color: #363535;
+}
+
+.product-name p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+#product-price {
+    font-weight: 700;
+    color: #D1957B;
+}
+
+/* Кнопка кошика в кутку фото */
+.add-to-cart-btn {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    background: white;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #D1957B;
+    transform: scale(1.1);
+}
+
+.add-to-cart-btn:hover img {
+    filter: brightness(0) invert(1); /* Робить іконку білою при ховері */
+}
+
+.add-to-cart-btn img {
+    width: 22px;
+    height: 22px;
+    margin: 0;
+}
+
+/* Стиль для товару якого немає */
+.product.out-of-stock {
+    opacity: 0.5; /* Робить товар тусклим */
+    filter: grayscale(80%); /* Майже чорно-білий */
+    pointer-events: none; /* Не дає клікати на нього */
+}
+
+.product.out-of-stock .add-to-cart-btn {
+    background: #ccc !important;
+    cursor: not-allowed;
+}
+
+.sold-out-text {
+    display: block;
+    color: #e74c3c;
+    font-size: 10px;
+    font-weight: bold;
+    margin-top: 5px;
+}

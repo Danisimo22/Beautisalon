@@ -1,0 +1,370 @@
+/* --- СТИЛІ КАБІНЕТУ КОРИСТУВАЧА MLVCH --- */
+
+.account-page {
+    background-color: #fcfcfc;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* КОНТЕЙНЕР-ОБОЛОНКА */
+.account-container {
+    max-width: 950px;
+    width: 90%;
+    margin: 80px auto;
+    display: flex;
+    gap: 60px;
+    background: #fff;
+    padding: 60px;
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.04);
+    position: relative;
+}
+
+/* КОЛОНКИ (Логін / Реєстрація) */
+.account-box { 
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+}
+
+.account-box h2 {
+    font-family: 'Alumni Sans', sans-serif;
+    font-size: 38px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.account-box p {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 25px;
+}
+
+/* РОЗДІЛЬНА ЛІНІЯ */
+.divider { 
+    width: 1px; 
+    background: #f0f0f0; 
+}
+
+/* ГРУПИ ВВОДУ */
+.input-group { 
+    margin-bottom: 18px;
+    position: relative;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    background-color: #fafafa;
+    box-sizing: border-box;
+}
+
+.input-group input:focus {
+    border-color: #D1957B;
+    background: #fff;
+    outline: none;
+    box-shadow: 0 0 10px rgba(209, 149, 123, 0.1);
+}
+
+/* СТИЛІ ДЛЯ ПАРОЛЯ (Око) */
+.password-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.toggle-password-img {
+    position: absolute;
+    right: 15px;
+    width: 20px;
+    height: auto;
+    cursor: pointer;
+    opacity: 0.4;
+    transition: 0.3s;
+    z-index: 5;
+}
+
+.toggle-password-img:hover {
+    opacity: 0.8;
+}
+
+.password-wrapper input {
+    padding-right: 45px !important;
+}
+
+/* КНОПКИ */
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: #ECB69F;
+    color: #333;
+}
+
+.btn-submit:hover {
+    background-color: #D1957B;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(209, 149, 123, 0.2);
+}
+
+.btn-dark {
+    background-color: #333;
+    color: #fff;
+}
+
+.btn-dark:hover {
+    background-color: #000;
+}
+
+/* --- СТИЛІ ПРОФІЛЮ (ПІСЛЯ ВХОДУ) --- */
+
+.profile-mode {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.profile-header h2 {
+    font-family: 'Alumni Sans', sans-serif;
+    font-size: 42px;
+    margin: 0;
+}
+
+.user-info-card {
+    background: #fff9f7;
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 35px;
+    border: 1px solid #ffede6;
+}
+
+.user-info-card p {
+    margin: 5px 0;
+    font-size: 15px;
+    color: #555;
+}
+
+.section-title {
+    font-family: 'Alumni Sans', sans-serif;
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* КАРТКИ ЗАПИСІВ */
+.booking-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 20px;
+    border-radius: 18px;
+    margin-bottom: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.02);
+    border-left: 5px solid #D1957B;
+    transition: 0.3s ease;
+}
+
+.booking-item:hover {
+    transform: translateX(8px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+}
+
+.booking-info span {
+    color: #999;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.booking-info strong {
+    display: block;
+    font-size: 18px;
+    margin: 5px 0;
+    color: #333;
+}
+
+.booking-info p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.booking-price-box {
+    margin-left: auto;
+    margin-right: 30px;
+}
+
+.booking-price {
+    font-size: 22px;
+    font-weight: 700;
+    color: #D1957B;
+}
+
+/* КНОПКА СКАСУВАННЯ */
+.btn-cancel {
+    background: #fff;
+    color: #e74c3c;
+    border: 1px solid #ffeded;
+    padding: 10px 18px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-cancel:hover {
+    background: #e74c3c !important;
+    color: white !important;
+    border-color: #e74c3c;
+}
+
+/* КНОПКА ВИХОДУ */
+.btn-logout {
+    background-color: transparent;
+    color: #888;
+    border: 1px solid #eee;
+    padding: 10px 22px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-logout:hover {
+    background-color: #fff1ed;
+    color: #D1957B;
+    border-color: #D1957B;
+    transform: translateY(-2px);
+}
+
+/* ПОСИЛАННЯ НАЗАД */
+.back-link {
+    position: fixed;
+    top: 30px;
+    left: 40px;
+    text-decoration: none;
+    color: #D1957B;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    z-index: 100;
+}
+
+.back-link:hover {
+    color: #333;
+    transform: translateX(-5px);
+}
+
+/* АДАПТИВНІСТЬ */
+@media (max-width: 850px) {
+    .account-container {
+        flex-direction: column;
+        margin: 60px 20px;
+        padding: 40px 25px;
+        gap: 40px;
+    }
+    .divider {
+        width: 100%;
+        height: 1px;
+    }
+    .back-link {
+        top: 20px;
+        left: 20px;
+    }
+    .booking-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    .booking-price-box {
+        margin: 0;
+    }
+    .btn-cancel {
+        width: 100%;
+    }
+}
+
+.extra-info {
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.extra-info label {
+    display: block;
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+.btn-save {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.btn-save:hover {
+    background: #D1957B;
+}
+
+/* Бейджі статусів замовлень у кабінеті */
+.order-status-badge {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+/* Корекція для списку товарів у замовленні */
+.booking-item strong {
+    color: #333;
+    font-size: 16px;
+}
+
+.empty-msg {
+    text-align: center;
+    color: #999;
+    padding: 20px;
+    font-style: italic;
+}

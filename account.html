@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мій акаунт | MLVCH</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/account.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Saira+Extra+Condensed:wght@200&display=swap" rel="stylesheet">
+    
+    <link rel="icon" href="img/favicon.ico">
+</head>
+<body class="account-page">
+
+    <a href="index.html" class="back-link">← НА ГОЛОВНУ</a>
+
+    <div class="main-wrapper">
+        
+        <div id="user-profile" class="account-container profile-mode" style="display: none;">
+            <div class="profile-header">
+                <h2>ПРИВІТ, <span id="welcome-name">КЛІЄНТЕ</span>! 👋</h2>
+                <button onclick="logout()" class="btn-logout">Вийти</button>
+            </div>
+            
+            <div class="user-info-card">
+                <p><strong>Ваш телефон:</strong> <span id="user-display-phone"></span></p>
+                <p><strong>Статус:</strong> Постійний клієнт MLVCH</p>
+                
+                <div class="extra-info">
+                    <div class="input-group">
+                        <label>Ваш Email:</label>
+                        <input type="email" id="user-email" placeholder="example@mail.com">
+                    </div>
+                    <div class="input-group">
+                        <label>Адреса доставки:</label>
+                        <input type="text" id="user-address" placeholder="Місто, вулиця, будинок">
+                    </div>
+                    <button onclick="updateProfile()" class="btn-save">Зберегти зміни</button>
+                </div>
+            </div>
+
+            <div class="profile-section">
+                <h3 class="section-title">Мої найближчі візити</h3>
+                <div id="profile-bookings-result"></div>
+            </div>
+
+            <div class="profile-section">
+                <h3 class="section-title">Поточні замовлення товарів</h3>
+                <div id="profile-orders-active"></div>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <div class="profile-section collapsible">
+                <div class="history-header" onclick="toggleSection('history-bookings-content', 'arrow-book')">
+                    <h3 class="section-title">Історія минулих візитів <span id="arrow-book">▼</span></h3>
+                </div>
+                <div id="history-bookings-content" class="collapsible-content" style="display: none;">
+                    <div id="profile-history-result"></div>
+                </div>
+            </div>
+
+            <div class="profile-section collapsible">
+                <div class="history-header" onclick="toggleSection('history-orders-content', 'arrow-order')">
+                    <h3 class="section-title">Історія замовлень товарів <span id="arrow-order">▼</span></h3>
+                </div>
+                <div id="history-orders-content" class="collapsible-content" style="display: none;">
+                    <div id="profile-orders-history"></div>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="auth-container" class="account-container">
+            <div class="account-box" id="login-section">
+                <h2>Мій кабінет</h2>
+                <p>Введіть дані, щоб побачити свої візити:</p>
+                
+                <div class="input-group">
+                    <input type="tel" id="search-phone" placeholder="Номер телефону (+380...)">
+                </div>
+                
+                <div class="input-group password-wrapper">
+                    <input type="password" id="login-password" placeholder="Ваш пароль">
+                    <img src="img/view.png" class="toggle-password-img" id="toggle-login-pass" 
+                         onclick="togglePassword('login-password', 'toggle-login-pass')" alt="Show">
+                </div>
+
+                <div class="button-group">
+                    <button onclick="handleLogin()" class="btn-submit btn-dark">Увійти</button>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="account-box">
+                <h2>Реєстрація</h2>
+                <p>Створіть профіль для зручного запису:</p>
+                
+                <div class="input-group">
+                    <input type="text" id="reg-name" placeholder="Ім'я" required>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="reg-surname" placeholder="Прізвище" required>
+                </div>
+                <div class="input-group">
+                    <input type="tel" id="reg-phone" placeholder="Номер телефону" required>
+                </div>
+
+                <div class="input-group password-wrapper">
+                    <input type="password" id="reg-password" placeholder="Придумайте пароль" required>
+                    <img src="img/view.png" class="toggle-password-img" id="toggle-reg-password" 
+                         onclick="togglePassword('reg-password', 'toggle-reg-password')" alt="Show">
+                </div>
+
+                <div class="input-group password-wrapper">
+                    <input type="password" id="confirm-password" placeholder="Повторіть пароль" required>
+                    <img src="img/view.png" class="toggle-password-img" id="toggle-confirm-password" 
+                         onclick="togglePassword('confirm-password', 'toggle-confirm-password')" alt="Show">
+                </div>
+
+                <button onclick="handleRegister()" class="btn-submit">Зареєструватися</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/booking.js"></script>
+    <script src="js/account.js"></script>
+    <script>
+        // Скрипт для згортання секцій
+        function toggleSection(contentId, arrowId) {
+            const content = document.getElementById(contentId);
+            const arrow = document.getElementById(arrowId);
+            if (content.style.display === "none") {
+                content.style.display = "block";
+                arrow.textContent = "▲";
+            } else {
+                content.style.display = "none";
+                arrow.textContent = "▼";
+            }
+        }
+
+        function togglePassword(inputId, imgId) {
+            const input = document.getElementById(inputId);
+            const img = document.getElementById(imgId);
+            if (input.type === "password") {
+                input.type = "text";
+                img.style.opacity = "0.5";
+            } else {
+                input.type = "password";
+                img.style.opacity = "1";
+            }
+        }
+    </script>
+</body>
+</html>
