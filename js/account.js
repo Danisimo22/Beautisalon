@@ -32,7 +32,7 @@ async function getMyBookings() {
     resultDiv.innerHTML = "<p>Шукаємо ваші записи...</p>";
 
     try {
-        const response = await fetch(`http://localhost:3000/api/my-bookings?phone=${encodeURIComponent(phone)}`);
+        const response = await fetch(`/api/my-bookings?phone=${encodeURIComponent(phone)}`);
         const bookings = await response.json();
 
         if (bookings.length === 0) {
@@ -74,7 +74,7 @@ async function handleRegister() {
     const userData = { name, surname, phone, password };
 
     try {
-        const response = await fetch('http://localhost:3000/api/register', {
+        const response = await fetch('/api/register', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(userData)
@@ -104,7 +104,7 @@ async function handleLogin() {
     }
 
     try {
-        const response = await fetch('http://localhost:3000/api/login', {
+        const response = await fetch('/api/login', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({ phone, password })
@@ -136,7 +136,7 @@ async function loadUserBookings(phone) {
     if (!activeResult || !historyResult) return;
 
     try {
-        const response = await fetch(`http://localhost:3000/api/my-bookings?phone=${encodeURIComponent(phone)}&t=${Date.now()}`);
+        const response = await fetch(`/api/my-bookings?phone=${encodeURIComponent(phone)}&t=${Date.now()}`);
         const bookings = await response.json();
 
         let activeHtml = '';
@@ -202,7 +202,7 @@ async function cancelBooking(id) {
     if (!confirm("Ви впевнені, що хочете скасувати цей візит?")) return;
 
     try {
-        const response = await fetch(`http://localhost:3000/api/cancel-booking/${id}`, {
+        const response = await fetch(`/api/cancel-booking/${id}`, {
             method: 'DELETE'
         });
 
@@ -225,7 +225,7 @@ async function updateProfile() {
     const address = document.getElementById('user-address').value.trim();
 
     try {
-        const response = await fetch('http://localhost:3000/api/update-profile', {
+        const response = await fetch('/api/update-profile', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ phone, email, address })
@@ -299,7 +299,7 @@ async function loadUserOrders(phone) {
     if (!activeResult || !historyResult) return;
 
     try {
-        const response = await fetch(`http://localhost:3000/api/my-orders?phone=${encodeURIComponent(phone)}`);
+        const response = await fetch(`/api/my-orders?phone=${encodeURIComponent(phone)}`);
         const orders = await response.json();
 
         let activeHtml = '';
@@ -348,7 +348,7 @@ async function cancelOrder(orderId) {
     if (!confirm("Ви впевнені, що хочете скасувати замовлення? Товари повернуться на склад.")) return;
 
     try {
-        const response = await fetch(`http://localhost:3000/api/orders/cancel/${orderId}`, {
+        const response = await fetch(`/api/orders/cancel/${orderId}`, {
             method: 'PATCH'
         });
 

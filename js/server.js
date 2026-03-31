@@ -15,10 +15,10 @@ app.use(cors());
 app.use(express.json());
 
 // --- 1. ПІДКЛЮЧЕННЯ ДО MONGODB ---
-const mongoURI = 'mongodb://localhost:27017/beautyHub';
+const mongoURI = process.env.MONGODB_URI;
 
 mongoose.connect(mongoURI)
-    .then(() => console.log('MongoDB підключено успішно (localhost:27017)'))
+    .then(() => console.log('MongoDB підключено успішно'))
     .catch(err => console.error('Помилка підключення до MongoDB:', err));
 
 // --- 2. СХЕМИ ТА МОДЕЛІ ДАНИХ ---
@@ -408,7 +408,8 @@ app.delete('/api/admin/delete-order/:id', async (req, res) => {
 });
 
 // --- 4. ЗАПУСК СЕРВЕРА ---
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
+
 app.listen(PORT, () => {
-    console.log(`Сервер запущено на http://localhost:${PORT}`);
+    console.log(`Сервер запущено на порту ${PORT}`);
 });
