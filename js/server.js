@@ -146,7 +146,10 @@ app.post('/api/register', async (req, res) => {
         const newUser = new User(req.body);
         await newUser.save();
         res.status(201).json({ message: "Користувач зареєстрований" });
-    } catch (err) { res.status(500).json({ error: 'Помилка реєстрації' }); }
+    } catch (err) {
+        console.error("REGISTER ERROR:", err);
+        res.status(500).json({ error: 'Помилка реєстрації' });
+    }
 });
 
 // --- ПРОФІЛЬ ---
