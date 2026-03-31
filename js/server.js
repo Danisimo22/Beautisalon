@@ -3,16 +3,16 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const path = require('path');
 
+const app = express(); // ✅ ПЕРЕНЕСИ СЮДИ
+
 app.use(express.static(path.join(__dirname, '..')));
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'index.html'));
 });
-const app = express();
 
-// --- НАЛАШТУВАННЯ ---
-app.use(cors()); 
-app.use(express.json()); 
+app.use(cors());
+app.use(express.json());
 
 // --- 1. ПІДКЛЮЧЕННЯ ДО MONGODB ---
 const mongoURI = 'mongodb://localhost:27017/beautyHub';
